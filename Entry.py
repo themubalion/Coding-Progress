@@ -1,8 +1,7 @@
 class entries:
-    def __init__(self,topic,inittime,fintime,date,language):
+    def __init__(self,topic,time,date,language):
         self.topic = topic
-        self.inittime = inittime
-        self.fintime = fintime
+        self.time = time
         self.date = date
         self.lang = language
 
@@ -10,11 +9,10 @@ fnamelist = {'python':'Python-Progress.txt','css':'CSS-Progress.txt','js':'JavaS
 
 def func_entry():
     topic = input('Enter the topic you learned today. \n')
-    time_init = input('Enter the start of the time. \n')
-    time_final = input('Enter the time you finished your Topic. \n')
+    time = input('Enter the time in minutes you did coding today. \n')
     date = input('Enter present date.\n')
     lang = input('The language where the topic belongs.\n')
-    if ':' not in topic and time_init and time_final and date and lang:
+    if ':' not in topic and time and date and lang:
         if 'python' in lang.lower():
             thand = open(fnamelist['python'],'a')
         elif 'css' in lang.lower():
@@ -27,10 +25,10 @@ def func_entry():
         print('Please do not insert colon ":" in the input box')
 
 
-    entry = entries(topic,time_init,time_final,date,lang)
+    entry = entries(topic,time,date,lang)
 
-    initial_entry = f"Topic: {entry.topic}\nFrom: {entry.inittime}\nTo:{entry.fintime}\nDate:{entry.date}\nLanguage:{entry.lang}\n\n"
+    initial_entry = f"Topic: {entry.topic}\nMinutes studied: {entry.time}\nDate:{entry.date}\nLanguage:{entry.lang}\n\n"
 
-    final_entry = thand.write(initial_entry)
+    thand.write(initial_entry)
     thand.close()
 func_entry()
