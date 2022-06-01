@@ -1,6 +1,5 @@
 Topic: Advanced CSS selectors
-From: 12:15 PM
-To:12:45 PM
+Minutes studied:30 min.
 Date:31/05/2022
 Language:CSS
 

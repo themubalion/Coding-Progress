@@ -27,7 +27,7 @@ def func_entry():
 
     entry = entries(topic,time,date,lang)
 
-    initial_entry = f"Topic: {entry.topic}\nMinutes studied: {entry.time}\nDate:{entry.date}\nLanguage:{entry.lang}\n\n"
+    initial_entry = f"Topic: {entry.topic}\nMinutes studied: {entry.time} min.\nDate:{entry.date}\nLanguage:{entry.lang}\n\n"
 
     thand.write(initial_entry)
     thand.close()
